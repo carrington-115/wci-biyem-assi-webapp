@@ -1,7 +1,12 @@
 import React from "react";
+import CarouselHeader from "../CarouselHeader";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <CarouselHeader />
+    </div>
+  );
 }
 
 export default Home;
