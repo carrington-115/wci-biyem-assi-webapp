@@ -178,7 +178,7 @@ const CarouselContainer = styled(Slider)`
   }
   .slick-prev,
   .slick-next {
-    z-index: 20;
+    z-index: 8;
   }
   .slick-next {
     right: 20px;
