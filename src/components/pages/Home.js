@@ -131,10 +131,6 @@ const ContentBody = styled.div`
     align-items: center;
     overflow: hidden;
   }
-  iframe {
-    padding: 0;
-    margin: 0;
-  }
   .aside-div {
     width: calc(100%-80%);
   }
