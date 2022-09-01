@@ -88,10 +88,32 @@ function AboutSection() {
   return (
     <AboutContainer>
       <h1>Want to know about us?</h1>
-      <div className="bishop-abt-div"></div>
-      <div className="wci-abt-div"></div>
-      <div className="mandate-div"></div>
+      <AboutComponent
+        imgLink="/image-file/logo.png"
+        learnLink="about-us"
+        description="Learn More about Winners' Chapel International"
+      />
+      <AboutComponent
+        imgLink="/image-file/oyedepo90.jpg"
+        learnLink="about-us"
+        description="Learn More About Bishop David Oyedepo, the founder of Living Church World wide"
+      />
     </AboutContainer>
+  );
+}
+function AboutComponent(props) {
+  return (
+    <Fade bottom>
+      <AbtcompContainer>
+        <div className="about-image">
+          <img src={props.imgLink} alt="the-about-image" />
+        </div>
+        <div className="about-text">
+          <h2>{props.description}</h2>
+          <LearnMoreLink to={props.learnLink}>Learn more</LearnMoreLink>
+        </div>
+      </AbtcompContainer>
+    </Fade>
   );
 }
 
@@ -242,11 +264,69 @@ const AboutContainer = styled(MainContainerContent)`
   background-color: white;
   margin-top: 0;
   padding-top: 0;
+  margin-bottom: 1.5cm;
   h1 {
     background-color: rgba(252, 3, 3, 0.7);
     color: white;
     margin-top: 0;
     text-align: center;
     width: 100%;
+  }
+`;
+
+const AbtcompContainer = styled.div`
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+  border: 2.5px solid rgba(0, 0, 0, 0.2);
+  margin-top: 1.5cm;
+  background-color: rgba(211, 176, 150, 0.1);
+  border-radius: 30px;
+  width: 25cm;
+  padding: 0;
+  .about-image {
+    width: 7cm;
+    height: 100%;
+    margin-right: 20px;
+    padding: 0;
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+  }
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 20cm;
+    h2 {
+      font-size: 2.7em;
+      text-align: center;
+    }
+  }
+`;
+
+const LearnMoreLink = styled(Link)`
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  padding: 10px 20px;
+  background-color: red;
+  border-radius: 20px;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: white;
+    color: red;
+    border: 2px solid black;
   }
 `;
