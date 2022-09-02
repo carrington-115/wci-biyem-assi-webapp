@@ -80,6 +80,8 @@ const NavContainer = styled.header`
   align-items: center;
   background-color: ${(props) =>
     props.showHeader ? "rgb(240, 195, 60)" : "transparent"};
+  box-shadow: ${(props) =>
+    props.showHeader ? "0px 2px 3px rgba(0, 0, 0, 0.5)" : "none"};
 `;
 const NavLogo = styled.div`
   transition: all 0.5s 250ms cubic-bezier(0.53, 0.51, 0.61, 0.63);
